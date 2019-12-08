@@ -5,7 +5,9 @@ using System.Web;
 
 namespace WeatherForecastApp
 {
-    
+    /// <summary>
+    ///     This class pocesses the API Operations class
+    /// </summary>
     public class ProcessorClass
     {
         /// <summary>
@@ -23,7 +25,7 @@ namespace WeatherForecastApp
         }
 
         /// <summary>
-        /// This static method calls the Ger_localWeather 
+        /// This static method calls the Get_localWeather 
         /// method of the Operations class
         /// </summary>
         public static void ProcessLocalWeather() {

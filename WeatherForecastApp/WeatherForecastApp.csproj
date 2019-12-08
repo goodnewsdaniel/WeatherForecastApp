@@ -31,6 +31,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\WeatherForecastApp.XML</DocumentationFile>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="DefaultConnection-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=%28LocalDb%29\MSSQLlocalDB%3bInitial Catalog=aspnet-WeatherForecastApp-20191126112757%3bIntegrated Security=SSPI%3bAttachDBFilename=|DataDirectory|\aspnet-WeatherForecastApp-20191126112757.mdf" ScriptSchema="True" ScriptData="True" ScriptDropsFirst="True" targetDatabaseEngineType="SQLAzureDatabase" prefetchObjects="false" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\DefaultConnection-Deployment_SchemaAndData.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <LegacyPublishPropertiesPageEnabled>true</LegacyPublishPropertiesPageEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,6 +55,39 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MVP.WebForms.Business, Version=0.5.1.0, Culture=neutral, PublicKeyToken=afb2059348239ed9, processorArchitecture=MSIL">
+      <HintPath>..\packages\MVP.WebForms.View.0.5.2.0\lib\net45\MVP.WebForms.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="MVP.WebForms.Common, Version=0.5.1.0, Culture=neutral, PublicKeyToken=c62c12a1c550ece0, processorArchitecture=MSIL">
+      <HintPath>..\packages\MVP.WebForms.View.0.5.2.0\lib\net45\MVP.WebForms.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MVP.WebForms.Common.WinControls, Version=0.5.1.0, Culture=neutral, PublicKeyToken=a2c432495a69fa9d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MVP.WebForms.View.0.5.2.0\lib\net45\MVP.WebForms.Common.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="MVP.WebForms.DataAccess, Version=0.5.1.0, Culture=neutral, PublicKeyToken=1c632c904f6aa663, processorArchitecture=MSIL">
+      <HintPath>..\packages\MVP.WebForms.View.0.5.2.0\lib\net45\MVP.WebForms.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="MVP.WebForms.DataAccess.Code, Version=0.5.1.0, Culture=neutral, PublicKeyToken=cc8a12600a040441, processorArchitecture=MSIL">
+      <HintPath>..\packages\MVP.WebForms.View.0.5.2.0\lib\net45\MVP.WebForms.DataAccess.Code.dll</HintPath>
+    </Reference>
+    <Reference Include="MVP.WebForms.Helpers, Version=0.5.1.0, Culture=neutral, PublicKeyToken=5fdce5e6affac5d3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MVP.WebForms.View.0.5.2.0\lib\net45\MVP.WebForms.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="MVP.WebForms.View, Version=0.5.2.0, Culture=neutral, PublicKeyToken=9831cee4765554e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\MVP.WebForms.View.0.5.2.0\lib\net45\MVP.WebForms.View.dll</HintPath>
+    </Reference>
+    <Reference Include="MVP.WebForms.View.Business, Version=0.5.2.0, Culture=neutral, PublicKeyToken=be747effe2ab5559, processorArchitecture=MSIL">
+      <HintPath>..\packages\MVP.WebForms.View.0.5.2.0\lib\net45\MVP.WebForms.View.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="MVP.WebForms.View.Common, Version=0.5.2.0, Culture=neutral, PublicKeyToken=5a81794926ab6473, processorArchitecture=MSIL">
+      <HintPath>..\packages\MVP.WebForms.View.0.5.2.0\lib\net45\MVP.WebForms.View.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MVP.WebForms.View.Presentation, Version=0.5.2.0, Culture=neutral, PublicKeyToken=c64c52283f3beb45, processorArchitecture=MSIL">
+      <HintPath>..\packages\MVP.WebForms.View.0.5.2.0\lib\net45\MVP.WebForms.View.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="MVP.WebForms.View.TextTemplate, Version=0.5.2.0, Culture=neutral, PublicKeyToken=fbd59d51afd76bf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\MVP.WebForms.View.0.5.2.0\lib\net45\MVP.WebForms.View.TextTemplate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -111,6 +157,9 @@
     </Reference>
     <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.0\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebFormsMvp.1.4.5.0\lib\WebFormsMvp.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -208,6 +257,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </Content>
+    <Content Include="libman.json" />
+    <None Include="Properties\PublishProfiles\WeatherForecastApp2019 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\WeatherForecastApp20191204082450 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />

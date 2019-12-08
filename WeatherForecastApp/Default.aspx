@@ -10,9 +10,9 @@
     </section>
 </asp:Content>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h3>Enter Location to Check Weather Condition:</h3>
+    <h2>Enter Location to Check Weather Condition:</h2>
     <div class="row justify-content-center"> 
-        <asp:TextBox ID="SearchTextBox" runat="server" Font-Size="Smaller" Width="302px" AutoPostBack="True" OnTextChanged="SearchTextBox_TextChanged" />
+        <asp:TextBox ID="SearchTextBox" runat="server" Font-Size="Medium" Width="302px" AutoPostBack="True" OnTextChanged="SearchTextBox_TextChanged" />
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="SearchTextBox" CssClass="field-validation-error" ErrorMessage="Location name is required for the operation." />
         <asp:DropDownList ID="NoOfDaysDropDownList" runat="server" Height="29px" Width="100px">
             <asp:ListItem Value="1"></asp:ListItem>
@@ -26,12 +26,13 @@
         </asp:DropDownList>
     </div>
     <div> 
-        <asp:Button ID="SearchLocation" runat="server" Text="Search Location" Font-Size="Smaller" OnClick="SearchLocationButton_Click" />
-         <asp:Button ID="DisplayWeatherForecastButton" runat="server" Text="Display Weather Forecast" Font-Size="Smaller" OnClick="DisplayWeatherForecastButton_Click" />
-         <asp:Button ID="DisplayTidalDataButton" runat="server" Font-Size="Smaller" Text="Display Tidal Data" OnClick="DisplayTidalDataButton_Click" />
-         <asp:Button ID="DisplayHistoricalDataButton" runat="server" Font-Size="Smaller" Text="Display Historical Data" OnClick="DisplayHistoricalDataButton_Click" />
+        <asp:Button ID="SearchLocation" runat="server" Text="Search Location" Font-Size="Medium" OnClick="SearchLocationButton_Click" />
+         <asp:Button ID="DisplayWeatherForecastButton" runat="server" Text="Display Weather Forecast" Font-Size="Medium" OnClick="DisplayWeatherForecastButton_Click" />
+         <asp:Button ID="DisplayTidalDataButton" runat="server" Font-Size="Medium" Text="Display Tidal Data" OnClick="DisplayTidalDataButton_Click" />
+         <asp:Button ID="DisplayHistoricalDataButton" runat="server" Font-Size="Medium" Text="Display Historical Data" OnClick="DisplayHistoricalDataButton_Click" />
     </div>
             <div>
-                <asp:TextBox ID="DisplayResultsTextBox" runat="server" Height="147px" TextMode="MultiLine" Width="838px" Font-Size="Smaller" />
+                <asp:TextBox ID="DisplayResultsTextBox" runat="server" Height="147px" TextMode="MultiLine" Width="838px" Font-Size="Medium" />
             </div>
+
 </asp:Content>

@@ -4,11 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.WebSockets;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
 using System.Net.Http.Headers;
 using System.Net.Http;
 using System.Text;
 using System.Net;
-using System.Web.UI.WebControls;
 using System.ComponentModel;
 using Weather_API.localweather;
 using Weather_API.locationsearch;
@@ -56,9 +57,17 @@ namespace WeatherForecastApp
                 DisplayResultsTextBox.Text += "\r\n Visibility: " + localWeather.data.current_Condition[0].weatherDesc[0].value;
                 DisplayResultsTextBox.Text += "\r\n Observation Time: " + localWeather.data.current_Condition[0].observation_time;
                 DisplayResultsTextBox.Text += "\r\n Pressure: " + localWeather.data.current_Condition[0].pressure;
-                
-                
-            }catch(Exception ex){
+                DisplayResultsTextBox.Text += "\r\n Wind Speed: " + localWeather.data.current_Condition[0].windspeedKmph;
+                DisplayResultsTextBox.Text += "\r\n Wind Direction: " + localWeather.data.current_Condition[0].winddirDegree;
+                DisplayResultsTextBox.Text += "\r\n Precipitation: " + localWeather.data.current_Condition[0].precipMM;
+                DisplayResultsTextBox.Text += "\r\n Chance of Overcast: " + localWeather.data.current_Condition[0].chanceofovercast;
+                DisplayResultsTextBox.Text += "\r\n Chance of Rain: " + localWeather.data.current_Condition[0].chanceofrain;
+                DisplayResultsTextBox.Text += "\r\n Chance of Snow: " + localWeather.data.current_Condition[0].chanceofsnow;
+                DisplayResultsTextBox.Text += "\r\n Chance of Sunny: " + localWeather.data.current_Condition[0].chanceofsunny;
+                DisplayResultsTextBox.Text += "\r\n Chance of Thunder: " + localWeather.data.current_Condition[0].chanceofthunder;
+
+            }
+            catch (Exception ex){
                 ex.GetBaseException();
             }
         }
@@ -87,6 +96,19 @@ namespace WeatherForecastApp
                 DisplayResultsTextBox.Text += "\r\n Min Temp (c): " + marineWeather.data.weather[0].mintempC;
                 DisplayResultsTextBox.Text += "\r\n Max Temp (c): " + marineWeather.data.weather[0].maxtempC;
                 DisplayResultsTextBox.Text += "\r\n Cloud Cover: " + marineWeather.data.weather[0].hourly[0].cloudcover;
+                DisplayResultsTextBox.Text += "\r\n Cloud Cover: " + marineWeather.data.weather[0].hourly[0].swellDir16Point;
+                DisplayResultsTextBox.Text += "\r\n Swell Height: " + marineWeather.data.weather[0].hourly[0].swellHeight_m;
+                DisplayResultsTextBox.Text += "\r\n Swell Direction: " + marineWeather.data.weather[0].hourly[0].swellDir;
+                DisplayResultsTextBox.Text += "\r\n Humidity: " + marineWeather.data.weather[0].hourly[0].humidity;
+                DisplayResultsTextBox.Text += "\r\n Pressure: " + marineWeather.data.weather[0].hourly[0].pressure;
+                DisplayResultsTextBox.Text += "\r\n Visibility: " + marineWeather.data.weather[0].hourly[0].visibility;
+                DisplayResultsTextBox.Text += "\r\n Wind Speed: " + marineWeather.data.weather[0].hourly[0].windspeedMiles;
+                DisplayResultsTextBox.Text += "\r\n Water Temp: " + marineWeather.data.weather[0].hourly[0].waterTemp_C;
+                DisplayResultsTextBox.Text += "\r\n Sunrise: " + marineWeather.data.weather[0].astronomy[0].sunrise;
+                DisplayResultsTextBox.Text += "\r\n Sunset: " + marineWeather.data.weather[0].astronomy[0].sunset;
+                DisplayResultsTextBox.Text += "\r\n Moonrise: " + marineWeather.data.weather[0].astronomy[0].moonrise;
+                DisplayResultsTextBox.Text += "\r\n Moonset: " + marineWeather.data.weather[0].astronomy[0].moonset;
+
             }
             catch (Exception ex)
             {
@@ -122,6 +144,13 @@ namespace WeatherForecastApp
                 DisplayResultsTextBox.Text += "\r\n Min Temp(C): " + pastWeather.data.weather[0].mintempC;
                 DisplayResultsTextBox.Text += "\r\n Min Temp(F): " + pastWeather.data.weather[0].mintempF;
                 DisplayResultsTextBox.Text += "\r\n Cloud Cover: " + pastWeather.data.weather[0].hourly[0].cloudcover;
+                DisplayResultsTextBox.Text += "\r\n Humidity: " + pastWeather.data.weather[0].hourly[0].humidity;
+                DisplayResultsTextBox.Text += "\r\n Pressure: " + pastWeather.data.weather[0].hourly[0].pressure;
+                DisplayResultsTextBox.Text += "\r\n Visibility: " + pastWeather.data.weather[0].hourly[0].visibility;
+                DisplayResultsTextBox.Text += "\r\n Wind Speed: " + pastWeather.data.weather[0].hourly[0].windspeedMiles;
+
+
+                
             }
             catch (Exception ex)
             {
@@ -161,7 +190,7 @@ namespace WeatherForecastApp
                 DisplayResultsTextBox.Text += "\r\n Population: " + locationSearch.search_API.result[0].population;
                 DisplayResultsTextBox.Text += "\r\n Region: " + locationSearch.search_API.result[0].region[0].value;
 
-            }
+        }
             catch (Exception ex)
             {
                 ex.GetBaseException();
